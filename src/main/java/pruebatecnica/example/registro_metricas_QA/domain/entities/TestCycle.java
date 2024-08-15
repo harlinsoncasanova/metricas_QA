@@ -28,5 +28,5 @@ public class TestCycle {
     private Version version;
 
     @OneToMany(mappedBy = "testCycle", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Metric> metrics = new ArrayList<>();
+    private List<Metric> metrics = new ArrayList<>();//
 }
