@@ -22,7 +22,7 @@ public class NameAplication {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "aplication",cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "nameAplication",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Version> versions=new ArrayList<>();
 
 

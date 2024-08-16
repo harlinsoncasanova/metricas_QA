@@ -1,9 +1,6 @@
 package pruebatecnica.example.registro_metricas_QA.domain.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,6 +17,13 @@ public class Metric {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String metricName;
+    @Column(nullable = false)
     private BigDecimal metricValue;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "test_cycle_id")
+    private TestCycle testCycle;
+
 }
