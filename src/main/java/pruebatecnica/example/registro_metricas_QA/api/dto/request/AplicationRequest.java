@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -13,5 +15,6 @@ import lombok.NoArgsConstructor;
 public class AplicationRequest {
     @NotBlank(message = "El nombre de la aplicacion es requerido")
     private String name;
+
 
 }

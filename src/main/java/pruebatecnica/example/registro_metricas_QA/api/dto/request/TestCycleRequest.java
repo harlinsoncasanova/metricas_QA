@@ -6,13 +6,20 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class TestCycleRequest {
+    @NotBlank(message = "el nombre del aplicacion es requerido")
+    private String aplicacionEntity;
+    @NotBlank(message = "el nombre del version es requerido")
+    private Long idVersion;
     @NotBlank(message = "el nombre del ciclo es requerido")
     private String cycleName;
     @NotBlank(message = "la descripcion  es requerida")
     private String cycleDescription;
+    private List<MetricRequest> metrics;
 }

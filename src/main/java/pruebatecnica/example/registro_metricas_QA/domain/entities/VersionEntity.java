@@ -14,19 +14,20 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Version {
+public class VersionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
+
     @Column(nullable = false)
-    private String VersionName;
+    private String versionNumber;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_name_aplication")
-    private NameAplication nameAplication;
+    @JoinColumn(name = "application_id")
+    private ApplicationEntity applicationEntity;
 
-    @OneToMany(mappedBy = "version",cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<TestCycle> testCycles=new ArrayList<>();
+    @OneToMany(mappedBy = "versionEntity",cascade = CascadeType.ALL,orphanRemoval = true)
+    private List<TestCycle> testCycles;
 
 
 

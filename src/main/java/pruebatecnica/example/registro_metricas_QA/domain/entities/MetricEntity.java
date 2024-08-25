@@ -6,24 +6,25 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigDecimal;
 
-@Entity(name = "aplication")
+@Entity(name = "metric")
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class NameAplication {
+public class MetricEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long id;
-
+    private Long id;
     @Column(nullable = false)
-    private String name;
+    private String metricName;
+    @Column(nullable = false)
+    private double metricValue;
 
-    @OneToMany(mappedBy = "nameAplication",cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Version> versions=new ArrayList<>();
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "test_cycle_id")
+    private TestCycle testCycle;
 
 }

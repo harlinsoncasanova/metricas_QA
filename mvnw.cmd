@@ -19,7 +19,7 @@
 @REM ----------------------------------------------------------------------------
 
 @REM ----------------------------------------------------------------------------
-@REM Apache Maven Wrapper startup batch script, version 3.3.2
+@REM Apache Maven Wrapper startup batch script, versionEntity 3.3.2
 @REM
 @REM Optional ENV vars
 @REM   MVNW_REPOURL - repo url base for downloading maven distribution
@@ -71,7 +71,7 @@ switch -wildcard -casesensitive ( $($distributionUrl -replace '^.*/','') ) {
 }
 
 # apply MVNW_REPOURL and calculate MAVEN_HOME
-# maven home pattern: ~/.m2/wrapper/dists/{apache-maven-<version>,maven-mvnd-<version>-<platform>}/<hash>
+# maven home pattern: ~/.m2/wrapper/dists/{apache-maven-<versionEntity>,maven-mvnd-<versionEntity>-<platform>}/<hash>
 if ($env:MVNW_REPOURL) {
   $MVNW_REPO_PATTERN = if ($USE_MVND) { "/org/apache/maven/" } else { "/maven/mvnd/" }
   $distributionUrl = "$env:MVNW_REPOURL$MVNW_REPO_PATTERN$($distributionUrl -replace '^.*'+$MVNW_REPO_PATTERN,'')"
@@ -128,7 +128,7 @@ if ($distributionSha256Sum) {
   }
   Import-Module $PSHOME\Modules\Microsoft.PowerShell.Utility -Function Get-FileHash
   if ((Get-FileHash "$TMP_DOWNLOAD_DIR/$distributionUrlName" -Algorithm SHA256).Hash.ToLower() -ne $distributionSha256Sum) {
-    Write-Error "Error: Failed to validate Maven distribution SHA-256, your Maven distribution might be compromised. If you updated your Maven version, you need to update the specified distributionSha256Sum property."
+    Write-Error "Error: Failed to validate Maven distribution SHA-256, your Maven distribution might be compromised. If you updated your Maven versionEntity, you need to update the specified distributionSha256Sum property."
   }
 }
 

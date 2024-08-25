@@ -17,7 +17,7 @@ import java.util.List;
 public class TestCycle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @Column(nullable = false)
     private String cycleName;
     @Column(nullable = false)
@@ -25,8 +25,8 @@ public class TestCycle {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "version_id")
-    private Version version;
+    private VersionEntity versionEntity;
 
     @OneToMany(mappedBy = "testCycle", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Metric> metrics = new ArrayList<>();//
+    private List<MetricEntity> metrics=new ArrayList<>();
 }

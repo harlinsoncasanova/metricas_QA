@@ -1,19 +1,19 @@
 package pruebatecnica.example.registro_metricas_QA.api.dto.request;
 
-import jakarta.validation.constraints.NotBlank;
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class VersionRequest {
-    @NotBlank(message = "La versión es requerida")
-    private String versionName;
+public class MetricRequest {
 
-    private String name;
+    private String metricName;
+    private Double metricValue;
 
 }
