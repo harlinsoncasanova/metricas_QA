@@ -1,4 +1,4 @@
-Instructivo para Configurar el Ambiente de Desarrollo en Eclipse 2020-03 con SQL Server 2017
+**Instructivo para Configurar el Ambiente de Desarrollo en Eclipse 2020-03 con SQL Server 2017**
 
 1. Requisitos Previos
 Antes de comenzar, asegúrate de tener instalados los siguientes componentes en tu máquina de desarrollo:
