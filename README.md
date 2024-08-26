@@ -12,6 +12,7 @@ SQL Server 2017: Instala SQL Server 2017 y asegúrate de que está ejecutándose
 Microsoft JDBC Driver para SQL Server: Asegúrate de tener el controlador JDBC de Microsoft para SQL Server. Puedes descargarlo desde Microsoft JDBC Driver for SQL Server.
 
 **2. Clonación del Repositorio**
+
 Clona el repositorio del proyecto desde tu repositorio remoto (por ejemplo, GitHub). Abre una terminal y ejecuta:
 
 bash
@@ -20,6 +21,7 @@ git clone https://github.com/tu-usuario/tu-repositorio.git
 cd tu-repositorio
 
 **3. Importar el Proyecto en Eclipse**
+
 Abrir Eclipse y Crear un Nuevo Espacio de Trabajo:
 
 Inicia Eclipse y selecciona o crea un nuevo espacio de trabajo.
@@ -31,6 +33,7 @@ Navega hasta la ubicación del repositorio clonado y selecciona la carpeta raíz
 Haz clic en Finish para completar la importación.
 
 **4. Configuración del Proyecto para SQL Server 2017**
+
 Agregar Dependencia de JDBC para SQL Server en pom.xml:
 
 Abre el archivo pom.xml y agrega la dependencia del controlador JDBC de Microsoft para SQL Server en la sección <dependencies>:
@@ -61,10 +64,12 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.SQLServer2012Diale
 Asegúrate de reemplazar localhost, tu_base_de_datos, tu_usuario, y tu_contraseña con los valores adecuados para tu entorno.
 
 **5. Actualizar Dependencias de Maven**
+
 Haz clic derecho en el proyecto en el explorador de proyectos y selecciona Maven > Update Project....
 Marca Force Update of Snapshots/Releases y haz clic en OK.
 
 **6. Ejecución de la Aplicación**
+
 Ejecutar la Aplicación:
 
 Haz clic derecho en el proyecto y selecciona Run As > Spring Boot App. Esto iniciará el servidor Spring Boot y desplegará la aplicación.
@@ -74,6 +79,7 @@ Asegúrate de que tu SQL Server esté ejecutándose y de que los parámetros de 
 Accede a http://localhost:8080 en tu navegador para verificar que la aplicación se esté ejecutando correctamente.
 
 **7. Ejecución de Pruebas**
+
 Pruebas Unitarias:
 
 Haz clic derecho en el proyecto y selecciona Run As > Maven test para ejecutar las pruebas unitarias.
@@ -82,7 +88,9 @@ Pruebas de Integración:
 Asegúrate de que las bases de datos y otros servicios necesarios estén en funcionamiento antes de ejecutar las pruebas de integración.
 
 **8. Documentación Adicional**
+
 Para más detalles sobre el uso de la aplicación, la estructura del código, y cómo extender o modificar funcionalidades, consulta los documentos proporcionados en el repositorio, como diagramas de clases, secuencia, componentes, casos de uso y objetos.
 
 **9. Despliegue en Entorno de Producción**
+
 Para desplegar la aplicación en un entorno de producción con SQL Server 2017, sigue los pasos adecuados para tu infraestructura. Asegúrate de configurar correctamente el entorno, incluidas las variables de entorno, la configuración del servidor de aplicaciones y las bases de datos.
