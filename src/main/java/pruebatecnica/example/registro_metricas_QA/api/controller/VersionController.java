@@ -21,7 +21,6 @@ public class VersionController {
     @PostMapping
     public ResponseEntity<?> create(@RequestBody @Valid VersionRequest request, BindingResult result) {
         if (result.hasErrors()) {
-
             return new ResponseEntity<>(result.getAllErrors(), HttpStatus.BAD_REQUEST);
         }
 
@@ -29,7 +28,6 @@ public class VersionController {
             VersionDTO response = versionService.create(request);
             return new ResponseEntity<>(response, HttpStatus.CREATED);
         } catch (Exception e) {
-
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
@@ -40,7 +38,6 @@ public class VersionController {
             VersionDTO response = versionService.get(id);
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (Exception e) {
-            // Manejo de errores (opcional)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
@@ -51,7 +48,6 @@ public class VersionController {
             VersionDTO response = versionService.update(request, id);
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (Exception e) {
-            // Manejo de errores (opcional)
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
@@ -62,7 +58,6 @@ public class VersionController {
             versionService.delete(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
-            // Manejo de errores (opcional)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }

@@ -44,7 +44,7 @@ public class ApplicationController {
         List<TestCycleDTO> testCycles = applicationService.getTestCyclesByApplicationNameAndVersion(
                 request.getName(), request.getVersionName());
 
-        // Ordenar los resultados por el ID de la aplicación de forma ascendente
+
         testCycles.sort(Comparator.comparing(TestCycleDTO::getId));
 
         if (testCycles.isEmpty()) {

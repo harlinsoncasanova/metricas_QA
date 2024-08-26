@@ -1,8 +1,6 @@
 package pruebatecnica.example.registro_metricas_QA.api.dto.request;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @AllArgsConstructor

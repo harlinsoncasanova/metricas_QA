@@ -64,7 +64,7 @@ public class VersionService implements IVersionService {
     private VersionDTO toResponse(Version versionEntity) {
         VersionDTO response = new VersionDTO();
         response.setId(Math.toIntExact(versionEntity.getId()));
-        response.setVersionNumber(versionEntity.getVersionName());
+        response.setVersionName(versionEntity.getVersionName());
         response.setNameApp(versionEntity.getApplication().getName());
         return response;
     }

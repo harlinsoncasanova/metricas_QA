@@ -28,7 +28,7 @@ public class Version {
     @OneToMany(mappedBy = "version", fetch = FetchType.LAZY)
     private Set<TestCycle> testCycles = new HashSet<>();
 
-    // Getters y Setters
+
     public Long getId() {
         return id;
     }

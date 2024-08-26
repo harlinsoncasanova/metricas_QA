@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 public class VersionDTO {
     private int id;
-    private String VersionNumber;
+    private String VersionName;
     private String nameApp;
-    //private List<TestCycleDTO> testCycles;
+
 }

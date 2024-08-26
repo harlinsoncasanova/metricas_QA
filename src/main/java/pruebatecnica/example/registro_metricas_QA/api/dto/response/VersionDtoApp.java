@@ -11,5 +11,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class VersionDtoApp {
     private int id;
-    private String VersionNumber;
+    private String VersionName;
 }

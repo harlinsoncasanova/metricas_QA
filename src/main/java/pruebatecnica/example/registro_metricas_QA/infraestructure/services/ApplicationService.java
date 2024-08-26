@@ -104,14 +104,14 @@ public class ApplicationService  implements IApplicationService {
         Application application = applicationRepository.findByName(name)
                 .orElseThrow(() -> new RuntimeException("Application not found with name: " + name));
 
-        application.getVersions().size(); // Forzar la carga de versiones
+        application.getVersions().size();
 
         Version version = application.getVersions().stream()
                 .filter(v -> v.getVersionName().equals(versionName))
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Version not found with name: " + versionName));
 
-        version.getTestCycles().size(); // Forzar la carga de ciclos de prueba
+        version.getTestCycles().size();
 
         return version.getTestCycles().stream()
                 .map(this::toTestCycleDTO)

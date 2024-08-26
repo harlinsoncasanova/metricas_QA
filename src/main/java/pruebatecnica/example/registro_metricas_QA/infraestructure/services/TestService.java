@@ -39,29 +39,29 @@ public class TestService  implements ITestService {
             throw new RuntimeException("paso2");
         }
 
-        // Buscar la aplicación por nombre
+
         Application applicationEntity = applicationRepository.findByName(request.getAplicacionEntity())
                 .orElseThrow(() -> new RuntimeException("Application not found"));
 
-        // Buscar la versión por nombre
+
         List<Version> versions = versionRepository.findByVersionName(request.getVersionName());
         if (versions.isEmpty()) {
             throw new RuntimeException("Version not found");
         }
 
-        // Buscar la versión que pertenece a la aplicación especificada
+
         Version version = versions.stream()
                 .filter(v -> v.getApplication().equals(applicationEntity))
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Version does not belong to the specified application"));
 
-        // Crear un nuevo ciclo de prueba
+
         TestCycle testCycle = new TestCycle();
         testCycle.setCycleName(request.getCycleName());
         testCycle.setCycleDescription(request.getCycleDescription());
         testCycle.setVersion(version);
 
-        // Configurar las métricas del ciclo de prueba
+
         if (request.getMetrics() != null) {
             List<MetricEntity> metrics = request.getMetrics().stream()
                     .map(metricRequest -> {
@@ -75,10 +75,10 @@ public class TestService  implements ITestService {
             testCycle.setMetrics(metrics);
         }
 
-        // Guardar el ciclo de prueba y sus métricas en la base de datos
+
         TestCycle savedTestCycle = testCycleRepository.save(testCycle);
 
-        // Crear y guardar las métricas calculadas
+
         double testFailureRate = calculateTestFailureRate(savedTestCycle.getMetrics());
         double averageTimePerTestCase = calculateAverageTimePerTestCase(savedTestCycle.getMetrics());
 
@@ -92,12 +92,12 @@ public class TestService  implements ITestService {
         averageTimeMetric.setMetricValue(averageTimePerTestCase);
         averageTimeMetric.setTestCycle(savedTestCycle);
 
-        // Añadir las métricas calculadas al ciclo de prueba y guardar nuevamente
+
         savedTestCycle.getMetrics().add(failureRateMetric);
         savedTestCycle.getMetrics().add(averageTimeMetric);
         testCycleRepository.save(savedTestCycle);
 
-        // Convertir el ciclo de prueba guardado en un DTO para la respuesta
+
         return toResponse(savedTestCycle);
     }
 
@@ -138,7 +138,7 @@ public class TestService  implements ITestService {
         return response;
     }
 
-    private double calculateTestFailureRate(List<MetricEntity> metrics) {
+   public double calculateTestFailureRate(List<MetricEntity> metrics) {
         double executedTests = metrics.stream()
                 .filter(metric -> "Executed Test Cases".equals(metric.getMetricName()))
                 .mapToDouble(MetricEntity::getMetricValue)
