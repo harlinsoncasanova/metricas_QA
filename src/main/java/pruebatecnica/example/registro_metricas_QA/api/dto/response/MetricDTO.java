@@ -14,7 +14,6 @@ public class MetricDTO {
     private Long id;
     private String metricName;
     private Double metricValue;
-    private Double calculatedMetric1;
-    private Double calculatedMetric2;
+
 
 }

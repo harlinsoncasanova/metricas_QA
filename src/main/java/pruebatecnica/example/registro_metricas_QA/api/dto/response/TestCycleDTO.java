@@ -14,7 +14,7 @@ import java.util.List;
 public class TestCycleDTO {
     private Long id;
     private String aplicacionEntity;
-    private Long idVersion;
+    private String versionName;
     private String cycleName;
     private String cycleDescription;
     private List<MetricDTO> metrics;

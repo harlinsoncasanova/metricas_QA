@@ -25,8 +25,8 @@ public class TestCycle {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "version_id")
-    private VersionEntity versionEntity;
+    private Version version;
 
     @OneToMany(mappedBy = "testCycle", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<MetricEntity> metrics=new ArrayList<>();
+    private List<MetricEntity> metrics = new ArrayList<>();
 }
