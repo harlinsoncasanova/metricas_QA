@@ -46,11 +46,17 @@ Configura el archivo src/main/resources/application.properties para conectarte a
 
 
 spring.datasource.url=jdbc:sqlserver://localhost:1433;databaseName=tu_base_de_datos
+
 spring.datasource.username=tu_usuario
+
 spring.datasource.password=tu_contraseña
+
 spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+
 spring.jpa.hibernate.ddl-auto=update
+
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.SQLServer2012Dialect
+
 Asegúrate de reemplazar localhost, tu_base_de_datos, tu_usuario, y tu_contraseña con los valores adecuados para tu entorno.
 
 5. Actualizar Dependencias de Maven
